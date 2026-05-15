@@ -1,13 +1,12 @@
 
 // Example sketch which shows how to display some patterns
-// on a 64x32 LED matrix
 //
 
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>
 
 
-#define PANEL_RES_X 64      // Number of pixels wide of each INDIVIDUAL panel module. 
-#define PANEL_RES_Y 32     // Number of pixels tall of each INDIVIDUAL panel module.
+#define PANEL_RES_X 80      // Number of pixels wide of each INDIVIDUAL panel module. 
+#define PANEL_RES_Y 40     // Number of pixels tall of each INDIVIDUAL panel module.
 #define PANEL_CHAIN 1      // Total number of panels chained one to another
  
 //MatrixPanel_I2S_DMA dma_display;
@@ -37,7 +36,7 @@ void drawText(int colorWheelOffset)
   const char *line1 = "ESP32 DMA";
   const char *line2 = "*********";
   const char *line3 = "LED MATRIX!";
-  const char *line4 = "64x32 *RGB*";
+  const char *line4 = "80x40 *RGB*";
 
   const int16_t display_w = dma_display->width();
   const int16_t display_h = dma_display->height();
@@ -188,7 +187,7 @@ void setup() {
   // fill the screen with 'black'
   dma_display->fillScreen(dma_display->color444(0, 0, 0));
 
-  //drawText(0);
+  drawText(0);
 
 }
 
